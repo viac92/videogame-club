@@ -14,8 +14,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
       <header className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-gradient mb-2">Game Night Stats</h1>
-        <p className="text-muted-foreground">Statistiche delle serate di gioco del gruppo</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-gradient mb-2">Videogame Club</h1>
+        <p className="text-muted-foreground">Statistiche delle serate di gioco</p>
       </header>
 
       {/* Stats overview */}
