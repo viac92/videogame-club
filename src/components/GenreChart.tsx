@@ -2,9 +2,9 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recha
 import { gameGenres } from '@/data/gamingStats';
 
 const GenreChart = () => (
-  <div className="glass-card p-6">
-    <h2 className="text-lg font-bold mb-4 text-foreground">Generi Giocati</h2>
-    <ResponsiveContainer width="100%" height={300}>
+  <div className="glass-card p-3 md:p-6">
+    <h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Generi Giocati</h2>
+    <ResponsiveContainer width="100%" height={280}>
       <PieChart>
         <Pie
           data={gameGenres}
@@ -12,8 +12,8 @@ const GenreChart = () => (
           nameKey="name"
           cx="50%"
           cy="50%"
-          innerRadius={60}
-          outerRadius={110}
+          innerRadius={45}
+          outerRadius={90}
           paddingAngle={3}
           strokeWidth={0}
         >

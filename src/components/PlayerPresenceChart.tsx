@@ -12,12 +12,12 @@ const COLORS = [
 ];
 
 const PlayerPresenceChart = () => (
-  <div className="glass-card p-6">
-    <h2 className="text-lg font-bold mb-4 text-foreground">Presenze Totali per Giocatore</h2>
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={playerTotalPresence} layout="vertical" margin={{ left: 10 }}>
-        <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={12} />
-        <YAxis type="category" dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={13} width={70} />
+  <div className="glass-card p-3 md:p-6">
+    <h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Presenze Totali per Giocatore</h2>
+    <ResponsiveContainer width="100%" height={280}>
+      <BarChart data={playerTotalPresence} layout="vertical" margin={{ left: 0 }}>
+        <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={11} />
+        <YAxis type="category" dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={11} width={55} />
         <Tooltip
           contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
           itemStyle={{ color: 'hsl(210 20% 92%)' }}

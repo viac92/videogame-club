@@ -50,7 +50,7 @@ const WeeklyPresenceChart = () => {
   }, [filteredData]);
 
   return (
-    <div className="glass-card p-6">
+    <div className="glass-card p-3 md:p-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-1">
         <h2 className="text-lg font-bold text-foreground">Presenza Settimanale</h2>
         <div className="flex flex-wrap gap-1.5">
@@ -112,7 +112,7 @@ const WeeklyPresenceChart = () => {
         Media: {avg} giocatori/sessione · {filteredData.length} sessioni
       </p>
 
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={250} className="md:!h-[300px]">
         <AreaChart data={filteredData}>
           <defs>
             <linearGradient id="presenceGrad" x1="0" y1="0" x2="0" y2="1">
