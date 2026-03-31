@@ -133,7 +133,7 @@ const WeeklyPresenceChart = () => {
             itemStyle={{ color: 'hsl(210 20% 92%)' }}
             labelStyle={{ color: 'hsl(210 20% 92%)' }}
           />
-          <ReferenceLine y={avg} stroke="hsl(var(--accent))" strokeWidth={2} strokeDasharray="8 4" label={{ value: `Media ${avg}`, fill: 'hsl(var(--accent))', fontSize: 13, fontWeight: 700 }} />
+          <ReferenceLine y={avg} stroke="hsl(var(--accent))" strokeWidth={2} strokeDasharray="8 4" label={{ value: `  Media ${avg}  `, fill: 'hsl(var(--accent))', fontSize: 13, fontWeight: 700, position: 'insideTopRight', style: { background: 'hsl(220 18% 10%)', paintOrder: 'stroke', stroke: 'hsl(220 20% 7%)', strokeWidth: 8, strokeLinejoin: 'round' } }} />
           <Area
             type="monotone"
             dataKey="presenze"
