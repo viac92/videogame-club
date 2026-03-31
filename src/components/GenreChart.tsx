@@ -16,6 +16,7 @@ const GenreChart = () => (
           outerRadius={90}
           paddingAngle={3}
           strokeWidth={0}
+          activeShape={undefined}
         >
           {gameGenres.map((entry, i) => (
             <Cell key={i} fill={entry.fill} />
