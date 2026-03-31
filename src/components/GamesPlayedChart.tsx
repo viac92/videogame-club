@@ -9,7 +9,7 @@ const GamesPlayedChart = () => {
   return (
     <div className="glass-card p-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-bold text-foreground">🕹️ Giochi Più Giocati</h2>
+        <h2 className="text-lg font-bold text-foreground">Giochi Più Giocati</h2>
         <button
           onClick={() => setShowAll(!showAll)}
           className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"

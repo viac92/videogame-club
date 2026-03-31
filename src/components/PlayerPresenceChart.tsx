@@ -13,7 +13,7 @@ const COLORS = [
 
 const PlayerPresenceChart = () => (
   <div className="glass-card p-6">
-    <h2 className="text-lg font-bold mb-4 text-foreground">🎮 Presenze Totali per Giocatore</h2>
+    <h2 className="text-lg font-bold mb-4 text-foreground">Presenze Totali per Giocatore</h2>
     <ResponsiveContainer width="100%" height={300}>
       <BarChart data={playerTotalPresence} layout="vertical" margin={{ left: 10 }}>
         <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={12} />

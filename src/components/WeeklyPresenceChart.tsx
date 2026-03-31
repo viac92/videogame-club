@@ -10,7 +10,7 @@ const WeeklyPresenceChart = () => {
 
   return (
     <div className="glass-card p-6">
-      <h2 className="text-lg font-bold mb-1 text-foreground">📅 Presenza Settimanale</h2>
+      <h2 className="text-lg font-bold mb-1 text-foreground">Presenza Settimanale</h2>
       <p className="text-sm text-muted-foreground mb-4">Media: {avg} giocatori/sessione · {weeklyPresence.length} sessioni totali</p>
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={weeklyPresence}>
