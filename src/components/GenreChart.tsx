@@ -69,5 +69,21 @@ const GenreChart = () => {
     </div>
   );
 };
+<style>{`
+  [data-genre-chart] .recharts-sector:focus,
+  [data-genre-chart] .recharts-sector:focus-visible {
+    outline: none;
+  }
+  [data-genre-chart] .recharts-active-dot,
+  [data-genre-chart] .recharts-pie-sector:focus rect,
+  [data-genre-chart] svg:focus,
+  [data-genre-chart] svg *:focus {
+    outline: none !important;
+  }
+  [data-genre-chart] .recharts-wrapper:focus,
+  [data-genre-chart] .recharts-surface:focus {
+    outline: none !important;
+  }
+`}</style>;
 
 export default GenreChart;
