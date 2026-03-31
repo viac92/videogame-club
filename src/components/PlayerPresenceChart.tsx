@@ -19,7 +19,9 @@ const PlayerPresenceChart = () => (
         <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={12} />
         <YAxis type="category" dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={13} width={70} />
         <Tooltip
-          contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8, color: 'hsl(210 20% 92%)' }}
+          contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
+          itemStyle={{ color: 'hsl(210 20% 92%)' }}
+          labelStyle={{ color: 'hsl(210 20% 92%)' }}
         />
         <Bar dataKey="presenze" radius={[0, 6, 6, 0]} barSize={28}>
           {playerTotalPresence.map((_, i) => (

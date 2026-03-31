@@ -22,7 +22,9 @@ const GamesPlayedChart = () => {
           <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={12} />
           <YAxis type="category" dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={11} width={160} />
           <Tooltip
-            contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8, color: 'hsl(210 20% 92%)' }}
+            contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
+            itemStyle={{ color: 'hsl(210 20% 92%)' }}
+            labelStyle={{ color: 'hsl(210 20% 92%)' }}
           />
           <Bar dataKey="giocate" fill="hsl(var(--chart-5))" radius={[0, 6, 6, 0]} barSize={20} />
         </BarChart>

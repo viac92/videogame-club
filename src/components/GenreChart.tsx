@@ -22,7 +22,9 @@ const GenreChart = () => (
           ))}
         </Pie>
         <Tooltip
-          contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8, color: 'hsl(210 20% 92%)' }}
+          contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
+          itemStyle={{ color: 'hsl(210 20% 92%)' }}
+          labelStyle={{ color: 'hsl(210 20% 92%)' }}
         />
         <Legend
           wrapperStyle={{ fontSize: 12, color: 'hsl(var(--muted-foreground))' }}
