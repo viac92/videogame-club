@@ -28,12 +28,22 @@ const GenreChart = () => {
   return (
     <div data-genre-chart className="glass-card p-3 md:p-6">
       <style>{`
-        [data-genre-chart] .recharts-sector:focus,
-        [data-genre-chart] .recharts-sector:focus-visible {
-          outline: none;
-        }
-      `}</style>
-      <h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Generi Giocati</h2>
+      [data-genre-chart] .recharts-sector:focus,
+      [data-genre-chart] .recharts-sector:focus-visible {
+        outline: none;
+      }
+      [data-genre-chart] .recharts-active-dot,
+      [data-genre-chart] .recharts-pie-sector:focus rect,
+      [data-genre-chart] svg:focus,
+      [data-genre-chart] svg *:focus {
+        outline: none !important;
+      }
+      [data-genre-chart] .recharts-wrapper:focus,
+      [data-genre-chart] .recharts-surface:focus {
+        outline: none !important;
+      }
+    `}</style>
+      ;<h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Generi Giocati</h2>
       <ResponsiveContainer width="100%" height={280}>
         <PieChart>
           <Pie
@@ -69,21 +79,5 @@ const GenreChart = () => {
     </div>
   );
 };
-<style>{`
-  [data-genre-chart] .recharts-sector:focus,
-  [data-genre-chart] .recharts-sector:focus-visible {
-    outline: none;
-  }
-  [data-genre-chart] .recharts-active-dot,
-  [data-genre-chart] .recharts-pie-sector:focus rect,
-  [data-genre-chart] svg:focus,
-  [data-genre-chart] svg *:focus {
-    outline: none !important;
-  }
-  [data-genre-chart] .recharts-wrapper:focus,
-  [data-genre-chart] .recharts-surface:focus {
-    outline: none !important;
-  }
-`}</style>;
 
 export default GenreChart;
