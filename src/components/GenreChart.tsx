@@ -18,23 +18,29 @@ const renderActiveShape = (props: any) => {
   );
 };
 
-const GenreChart = () => (
-  <div className="glass-card p-3 md:p-6">
-    <h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Generi Giocati</h2>
-    <ResponsiveContainer width="100%" height={280}>
-      <PieChart>
-        <Pie
-          data={gameGenres}
-          dataKey="giocate"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          innerRadius={45}
-          outerRadius={90}
-          paddingAngle={3}
-          strokeWidth={0}
-          activeShape={undefined}
-        >
+const GenreChart = () => {
+  const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
+
+  return (
+    <div className="glass-card p-3 md:p-6">
+      <h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Generi Giocati</h2>
+      <ResponsiveContainer width="100%" height={280}>
+        <PieChart>
+          <Pie
+            data={gameGenres}
+            dataKey="giocate"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            innerRadius={45}
+            outerRadius={90}
+            paddingAngle={3}
+            strokeWidth={0}
+            activeIndex={activeIndex}
+            activeShape={renderActiveShape}
+            onMouseEnter={(_, index) => setActiveIndex(index)}
+            onMouseLeave={() => setActiveIndex(undefined)}
+          >
           {gameGenres.map((entry, i) => (
             <Cell key={i} fill={entry.fill} />
           ))}
