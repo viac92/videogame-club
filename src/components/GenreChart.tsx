@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend, Sector } from 'recharts';
-import { gameGenres } from '@/data/gamingStats';
+import { useState } from "react";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend, Sector } from "recharts";
+import { gameGenres } from "@/data/gamingStats";
 
 const renderActiveShape = (props: any) => {
   const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill } = props;
@@ -14,6 +14,7 @@ const renderActiveShape = (props: any) => {
         startAngle={startAngle}
         endAngle={endAngle}
         fill={fill}
+        style={{ outline: "none" }}
       />
     </g>
   );
@@ -57,14 +58,12 @@ const GenreChart = () => {
             ))}
           </Pie>
           <Tooltip
-            contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
-            itemStyle={{ color: 'hsl(210 20% 92%)' }}
-            labelStyle={{ color: 'hsl(210 20% 92%)' }}
+            contentStyle={{ background: "hsl(220 18% 12%)", border: "1px solid hsl(220 15% 22%)", borderRadius: 8 }}
+            itemStyle={{ color: "hsl(210 20% 92%)" }}
+            labelStyle={{ color: "hsl(210 20% 92%)" }}
             cursor={false}
           />
-          <Legend
-            wrapperStyle={{ fontSize: 12, color: 'hsl(var(--muted-foreground))' }}
-          />
+          <Legend wrapperStyle={{ fontSize: 12, color: "hsl(var(--muted-foreground))" }} />
         </PieChart>
       </ResponsiveContainer>
     </div>
