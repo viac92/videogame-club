@@ -1,24 +1,28 @@
 export const playerTotalPresence = [
-  { name: 'Viac', presenze: 74 },
-  { name: 'Rose', presenze: 68 },
-  { name: 'Forn', presenze: 66 },
-  { name: 'Ale', presenze: 59 },
-  { name: 'Olly', presenze: 40 },
-  { name: 'Nixon', presenze: 34 },
-  { name: 'Melissa', presenze: 32 },
+  { name: 'Viac', presenze: 95 },
+  { name: 'Rose', presenze: 91 },
+  { name: 'Forn', presenze: 87 },
+  { name: 'Ale', presenze: 79 },
+  { name: 'Olly', presenze: 44 },
+  { name: 'Melissa', presenze: 42 },
+  { name: 'Nixon', presenze: 36 },
+  { name: 'Scar', presenze: 1 },
 ];
 
 export const playedGames = [
-  { name: 'Halo Infinite', giocate: 16 },
-  { name: 'Deep Rock Galactic', giocate: 5 },
-  { name: 'Valheim', giocate: 4 },
+  { name: 'Halo Infinite', giocate: 18 },
+  { name: 'Deep Rock Galactic', giocate: 6 },
+  { name: 'RV There Yet', giocate: 5 },
   { name: 'Warhammer 40k: Darktide', giocate: 4 },
   { name: 'Helldivers 2', giocate: 4 },
+  { name: 'Valheim', giocate: 4 },
+  { name: 'Peak', giocate: 4 },
   { name: 'The Finals', giocate: 3 },
   { name: 'Age of Empires 4', giocate: 3 },
   { name: 'Moving Out 2', giocate: 3 },
   { name: 'Rematch', giocate: 3 },
   { name: 'Lonely Mountains: Snow Riders', giocate: 3 },
+  { name: 'Terraria', giocate: 3 },
   { name: 'Lego Fortnite', giocate: 2 },
   { name: 'PlateUp!', giocate: 2 },
   { name: 'Call of Duty: BO6', giocate: 2 },
@@ -28,6 +32,10 @@ export const playedGames = [
   { name: 'GTA V', giocate: 2 },
   { name: 'Abiotic Factory', giocate: 2 },
   { name: 'Fall Guys', giocate: 2 },
+  { name: 'Bronzebeard\'s Tavern', giocate: 2 },
+  { name: 'Vermintide 2', giocate: 2 },
+  { name: "Don't Starve Together", giocate: 2 },
+  { name: 'Return to Moria', giocate: 2 },
   { name: "Baldur's Gate 3", giocate: 1 },
   { name: 'Chivalry 2', giocate: 1 },
   { name: 'Clone Drone', giocate: 1 },
@@ -45,6 +53,7 @@ export const playedGames = [
   { name: '33 Immortals', giocate: 1 },
   { name: 'Golf With Your Friends', giocate: 1 },
   { name: "Tony Hawk's PS 3+4", giocate: 1 },
+  { name: 'Wobbly Life', giocate: 1 },
 ];
 
 export const weeklyPresence = [
@@ -62,17 +71,24 @@ export const weeklyPresence = [
   '07/05/2025','14/05/2025','21/05/2025','28/05/2025','04/06/2025','18/06/2025',
   '25/06/2025','02/07/2025','09/07/2025','16/07/2025','23/07/2025','30/07/2025',
   '06/08/2025','13/08/2025','20/08/2025','27/08/2025','03/09/2025','10/09/2025',
+  '17/09/2025','24/09/2025','01/10/2025','08/10/2025','15/10/2025','22/10/2025',
+  '29/10/2025','05/11/2025','19/11/2025','26/11/2025','03/12/2025','10/12/2025',
+  '17/12/2025','07/01/2026','14/01/2026','28/01/2026','04/02/2026','11/02/2026',
+  '18/02/2026','25/02/2026','04/03/2026','11/03/2026','18/03/2026','25/03/2026',
 ].map((date, i) => ({
   date,
-  presenze: [5,5,4,2,5,4,5,2,3,4,3,5,4,3,4,3,3,4,4,4,2,5,4,3,5,2,5,4,5,4,5,3,3,4,3,4,5,6,4,6,4,5,4,6,5,6,7,6,7,4,6,5,5,5,4,7,5,4,6,6,6,5,4,7,3,4,5,3,5,5,4,4,4,6,5,3,5,6,2,3,5,5,4,4][i],
+  presenze: [
+    5,5,4,2,5,4,5,2,3,4,3,5,4,3,4,3,3,4,4,4,2,5,4,3,5,2,5,4,5,4,5,3,3,4,3,4,5,6,4,6,4,5,4,6,5,6,7,6,7,4,6,5,5,5,4,7,5,4,6,6,6,5,4,7,3,4,5,3,5,5,4,4,4,6,5,3,5,6,2,3,5,5,4,4,
+    6,4,3,4,3,3,6,5,5,6,4,5,3,5,4,4,3,5,4,4,4,4,5,4,
+  ][i],
 }));
 
 export const gameGenres = [
-  { name: 'FPS', giocate: 33, fill: 'hsl(var(--chart-1))' },
-  { name: 'Survival', giocate: 12, fill: 'hsl(var(--chart-2))' },
-  { name: 'Party Games', giocate: 9, fill: 'hsl(var(--chart-3))' },
+  { name: 'FPS', giocate: 38, fill: 'hsl(var(--chart-1))' },
+  { name: 'Survival', giocate: 19, fill: 'hsl(var(--chart-2))' },
+  { name: 'Party Games', giocate: 12, fill: 'hsl(var(--chart-3))' },
   { name: 'RPG', giocate: 3, fill: 'hsl(var(--chart-4))' },
   { name: 'RTS', giocate: 4, fill: 'hsl(var(--chart-5))' },
   { name: 'Corse', giocate: 6, fill: 'hsl(var(--chart-6))' },
-  { name: 'Altro', giocate: 17, fill: 'hsl(var(--chart-7))' },
+  { name: 'Altro', giocate: 26, fill: 'hsl(var(--chart-7))' },
 ];
