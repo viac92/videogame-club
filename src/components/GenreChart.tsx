@@ -3,7 +3,7 @@ import { gameGenres } from '@/data/gamingStats';
 
 const GenreChart = () => (
   <div className="glass-card p-6">
-    <h2 className="text-lg font-bold mb-4 text-foreground">🎯 Generi Giocati</h2>
+    <h2 className="text-lg font-bold mb-4 text-foreground">Generi Giocati</h2>
     <ResponsiveContainer width="100%" height={300}>
       <PieChart>
         <Pie
