@@ -43,7 +43,7 @@ const GenreChart = () => {
         outline: none !important;
       }
     `}</style>
-      ;<h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Generi Giocati</h2>
+      <h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Generi Giocati</h2>
       <ResponsiveContainer width="100%" height={280}>
         <PieChart>
           <Pie
