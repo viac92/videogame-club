@@ -20,10 +20,18 @@ const renderActiveShape = (props: any) => {
 };
 
 const GenreChart = () => {
-  const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const activeIndex = hoveredIndex ?? selectedIndex ?? undefined;
 
   return (
-    <div className="glass-card p-3 md:p-6">
+    <div data-genre-chart className="glass-card p-3 md:p-6">
+      <style>{`
+        [data-genre-chart] .recharts-sector:focus,
+        [data-genre-chart] .recharts-sector:focus-visible {
+          outline: none;
+        }
+      `}</style>
       <h2 className="text-base md:text-lg font-bold mb-3 md:mb-4 text-foreground">Generi Giocati</h2>
       <ResponsiveContainer width="100%" height={280}>
         <PieChart>
@@ -37,26 +45,28 @@ const GenreChart = () => {
             outerRadius={90}
             paddingAngle={3}
             strokeWidth={0}
+            rootTabIndex={-1}
             activeIndex={activeIndex}
             activeShape={renderActiveShape}
-            onMouseEnter={(_, index) => setActiveIndex(index)}
-            onMouseLeave={() => setActiveIndex(undefined)}
+            onClick={(_, index) => setSelectedIndex((current) => (current === index ? null : index))}
+            onMouseEnter={(_, index) => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
-          {gameGenres.map((entry, i) => (
-            <Cell key={i} fill={entry.fill} />
-          ))}
-        </Pie>
-        <Tooltip
-          contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
-          itemStyle={{ color: 'hsl(210 20% 92%)' }}
-          labelStyle={{ color: 'hsl(210 20% 92%)' }}
-          cursor={false}
-        />
-        <Legend
-          wrapperStyle={{ fontSize: 12, color: 'hsl(var(--muted-foreground))' }}
-        />
-      </PieChart>
-    </ResponsiveContainer>
+            {gameGenres.map((entry, i) => (
+              <Cell key={i} fill={entry.fill} />
+            ))}
+          </Pie>
+          <Tooltip
+            contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
+            itemStyle={{ color: 'hsl(210 20% 92%)' }}
+            labelStyle={{ color: 'hsl(210 20% 92%)' }}
+            cursor={false}
+          />
+          <Legend
+            wrapperStyle={{ fontSize: 12, color: 'hsl(var(--muted-foreground))' }}
+          />
+        </PieChart>
+      </ResponsiveContainer>
     </div>
   );
 };
