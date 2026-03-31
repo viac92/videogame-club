@@ -1,6 +1,7 @@
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 import { weeklyPresence } from '@/data/gamingStats';
 import { useMemo, useState } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { parse, isAfter, isBefore, subMonths, startOfDay } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { Calendar } from '@/components/ui/calendar';
@@ -24,6 +25,7 @@ const FILTERS: { key: FilterType; label: string }[] = [
 ];
 
 const WeeklyPresenceChart = () => {
+  const isMobile = useIsMobile();
   const [filter, setFilter] = useState<FilterType>('all');
   const [customFrom, setCustomFrom] = useState<Date | undefined>();
   const [customTo, setCustomTo] = useState<Date | undefined>();
@@ -113,7 +115,7 @@ const WeeklyPresenceChart = () => {
       </p>
 
       <ResponsiveContainer width="100%" height={250} className="md:!h-[300px]">
-        <AreaChart data={filteredData}>
+        <AreaChart data={filteredData} margin={{ left: isMobile ? -20 : 0, right: isMobile ? 5 : 10 }}>
           <defs>
             <linearGradient id="presenceGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="hsl(var(--chart-1))" stopOpacity={0.4} />
@@ -123,11 +125,20 @@ const WeeklyPresenceChart = () => {
           <XAxis
             dataKey="date"
             stroke="hsl(var(--muted-foreground))"
-            fontSize={10}
+            fontSize={isMobile ? 8 : 10}
             tickLine={false}
-            interval={Math.max(0, Math.floor(filteredData.length / 8))}
+            interval={Math.max(0, Math.floor(filteredData.length / (isMobile ? 5 : 8)))}
+            tickFormatter={(val: string) => {
+              if (!isMobile) return val;
+              // Show only MM/YY on mobile
+              const parts = val.split('/');
+              return parts.length === 3 ? `${parts[1]}/${parts[2].slice(-2)}` : val;
+            }}
+            angle={isMobile ? -45 : 0}
+            textAnchor={isMobile ? 'end' : 'middle'}
+            height={isMobile ? 45 : 30}
           />
-          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} domain={[0, 8]} />
+          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={11} domain={[0, 8]} width={isMobile ? 25 : 40} />
           <Tooltip
             contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
             itemStyle={{ color: 'hsl(210 20% 92%)' }}
