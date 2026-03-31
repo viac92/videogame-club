@@ -29,7 +29,9 @@ const WeeklyPresenceChart = () => {
           />
           <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} domain={[0, 8]} />
           <Tooltip
-            contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8, color: 'hsl(210 20% 92%)' }}
+            contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
+            itemStyle={{ color: 'hsl(210 20% 92%)' }}
+            labelStyle={{ color: 'hsl(210 20% 92%)' }}
           />
           <ReferenceLine y={avg} stroke="hsl(var(--accent))" strokeDasharray="5 5" label={{ value: `Media ${avg}`, fill: 'hsl(var(--accent))', fontSize: 11 }} />
           <Area
