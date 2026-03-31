@@ -50,7 +50,7 @@ const WeeklyPresenceChart = () => {
   }, [filteredData]);
 
   return (
-    <div className="glass-card p-6">
+    <div className="glass-card p-3 md:p-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-1">
         <h2 className="text-lg font-bold text-foreground">Presenza Settimanale</h2>
         <div className="flex flex-wrap gap-1.5">
