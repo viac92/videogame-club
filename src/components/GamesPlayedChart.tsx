@@ -17,16 +17,16 @@ const GamesPlayedChart = () => {
           {showAll ? 'Top 15' : `Tutti (${playedGames.length})`}
         </button>
       </div>
-      <ResponsiveContainer width="100%" height={showAll ? 900 : 450}>
-        <BarChart data={data} layout="vertical" margin={{ left: 0 }}>
+      <ResponsiveContainer width="100%" height={showAll ? data.length * 28 + 40 : 450}>
+        <BarChart data={data} layout="vertical" margin={{ left: 10, right: 10, top: 5, bottom: 5 }}>
           <XAxis type="number" stroke="hsl(var(--muted-foreground))" fontSize={11} />
-          <YAxis type="category" dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={10} width={110} />
+          <YAxis type="category" dataKey="name" stroke="hsl(var(--muted-foreground))" fontSize={10} width={130} tick={{ width: 125 }} />
           <Tooltip
-            contentStyle={{ background: 'hsl(220 18% 12%)', border: '1px solid hsl(220 15% 22%)', borderRadius: 8 }}
-            itemStyle={{ color: 'hsl(210 20% 92%)' }}
-            labelStyle={{ color: 'hsl(210 20% 92%)' }}
+            contentStyle={{ background: 'hsl(var(--popover))', border: '1px solid hsl(var(--border))', borderRadius: 8 }}
+            itemStyle={{ color: 'hsl(var(--popover-foreground))' }}
+            labelStyle={{ color: 'hsl(var(--popover-foreground))' }}
           />
-          <Bar dataKey="giocate" fill="hsl(var(--chart-5))" radius={[0, 6, 6, 0]} barSize={20} />
+          <Bar dataKey="giocate" fill="hsl(var(--chart-5))" radius={[0, 6, 6, 0]} barSize={18} />
         </BarChart>
       </ResponsiveContainer>
     </div>
