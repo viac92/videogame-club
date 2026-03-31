@@ -112,7 +112,7 @@ const WeeklyPresenceChart = () => {
         Media: {avg} giocatori/sessione · {filteredData.length} sessioni
       </p>
 
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={250} className="md:!h-[300px]">
         <AreaChart data={filteredData}>
           <defs>
             <linearGradient id="presenceGrad" x1="0" y1="0" x2="0" y2="1">
