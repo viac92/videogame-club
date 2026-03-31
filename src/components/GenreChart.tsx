@@ -56,7 +56,8 @@ const GenreChart = () => {
         />
       </PieChart>
     </ResponsiveContainer>
-  </div>
-);
+    </div>
+  );
+};
 
 export default GenreChart;
