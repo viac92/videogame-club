@@ -1,16 +1,52 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import StatCard from '@/components/StatCard';
+import PlayerPresenceChart from '@/components/PlayerPresenceChart';
+import WeeklyPresenceChart from '@/components/WeeklyPresenceChart';
+import GamesPlayedChart from '@/components/GamesPlayedChart';
+import GenreChart from '@/components/GenreChart';
+import { playerTotalPresence, playedGames, weeklyPresence } from '@/data/gamingStats';
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const totalSessions = weeklyPresence.length;
+  const totalGames = playedGames.length;
+  const totalPlayers = playerTotalPresence.length;
+  const avgPresence = (weeklyPresence.reduce((a, b) => a + b.presenze, 0) / totalSessions).toFixed(1);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background p-4 md:p-8">
+      <header className="mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold text-gradient mb-2">Game Night Stats</h1>
+        <p className="text-muted-foreground">Statistiche delle serate di gioco del gruppo</p>
+      </header>
+
+      {/* Stats overview */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <StatCard label="Sessioni" value={totalSessions} icon="📆" />
+        <StatCard label="Giochi" value={totalGames} icon="🎮" />
+        <StatCard label="Giocatori" value={totalPlayers} icon="👥" />
+        <StatCard label="Media Presenze" value={avgPresence} icon="📊" />
+      </div>
+
+      {/* Weekly presence - full width */}
+      <div className="mb-8">
+        <WeeklyPresenceChart />
+      </div>
+
+      {/* Player presence + Genre donut */}
+      <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <PlayerPresenceChart />
+        <GenreChart />
+      </div>
+
+      {/* Games played */}
+      <div className="mb-8">
+        <GamesPlayedChart />
+      </div>
+
+      <footer className="text-center text-muted-foreground text-xs py-6">
+        Game Night Stats · Dati aggiornati al 2025
+      </footer>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
