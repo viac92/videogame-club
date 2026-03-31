@@ -25,6 +25,7 @@ const FILTERS: { key: FilterType; label: string }[] = [
 ];
 
 const WeeklyPresenceChart = () => {
+  const isMobile = useIsMobile();
   const [filter, setFilter] = useState<FilterType>('all');
   const [customFrom, setCustomFrom] = useState<Date | undefined>();
   const [customTo, setCustomTo] = useState<Date | undefined>();
