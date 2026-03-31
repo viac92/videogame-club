@@ -24,14 +24,6 @@ const Index = () => {
         <StatCard label="Giochi" value={totalGames} />
         <StatCard label="Giocatori" value={totalPlayers} />
         <StatCard label="Media Presenze" value={avgPresence} />
-      </header>
-
-      {/* Stats overview */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <StatCard label="Sessioni" value={totalSessions} />
-        <StatCard label="Giochi" value={totalGames} />
-        <StatCard label="Giocatori" value={totalPlayers} />
-        <StatCard label="Media Presenze" value={avgPresence} />
       </div>
 
       {/* Weekly presence - full width */}
