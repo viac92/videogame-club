@@ -43,7 +43,7 @@ const Index = () => {
       </div>
 
       <footer className="text-center text-muted-foreground text-xs py-6">
-        Game Night Stats · Dati aggiornati al 2025
+        Videogame Club · Dati aggiornati al 2025
       </footer>
     </div>
   );
