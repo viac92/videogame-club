@@ -1,8 +1,8 @@
 export const playerTotalPresence = [
-  { name: 'Viac', presenze: 95 },
-  { name: 'Rose', presenze: 91 },
-  { name: 'Forn', presenze: 87 },
-  { name: 'Ale', presenze: 79 },
+  { name: 'Viac', presenze: 96 },
+  { name: 'Rose', presenze: 92 },
+  { name: 'Forn', presenze: 88 },
+  { name: 'Ale', presenze: 80 },
   { name: 'Olly', presenze: 44 },
   { name: 'Melissa', presenze: 42 },
   { name: 'Nixon', presenze: 36 },
