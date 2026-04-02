@@ -35,7 +35,7 @@ export const playedGames = [
   { name: 'Bronzebeard\'s Tavern', giocate: 2 },
   { name: 'Vermintide 2', giocate: 2 },
   { name: "Don't Starve Together", giocate: 2 },
-  { name: 'Return to Moria', giocate: 2 },
+  { name: 'Return to Moria', giocate: 3 },
   { name: "Baldur's Gate 3", giocate: 1 },
   { name: 'Chivalry 2', giocate: 1 },
   { name: 'Clone Drone', giocate: 1 },
