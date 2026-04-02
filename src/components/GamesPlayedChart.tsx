@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 const GamesPlayedChart = () => {
   const [showAll, setShowAll] = useState(false);
-  const data = showAll ? playedGames : playedGames.slice(0, 15);
+  const sorted = [...playedGames].sort((a, b) => b.giocate - a.giocate);
+  const data = showAll ? sorted : sorted.slice(0, 15);
 
   return (
     <div className="glass-card p-3 md:p-6">
